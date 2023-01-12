@@ -1,4 +1,4 @@
-package sekelsta.math;
+package shadowfox.math;
 
 import java.util.Random;
 

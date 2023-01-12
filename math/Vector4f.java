@@ -1,4 +1,4 @@
-package sekelsta.math;
+package shadowfox.math;
 
 // This Vector4f class is released under a CC0 licence.
 // Feel free to use it in your own projects with or without attribution. There
