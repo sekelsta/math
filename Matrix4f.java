@@ -299,6 +299,10 @@ public class Matrix4f {
         return this;
     }
 
+    public Matrix4f scale(float s) {
+        return this.scale(s, s, s);
+    }
+
     public static Matrix4f mul(Matrix4f left, Matrix4f right, Matrix4f out) {
         float m00 = left.m00 * right.m00 + left.m01 * right.m10 + left.m02 * right.m20 + left.m03 * right.m30;
         float m10 = left.m10 * right.m00 + left.m11 * right.m10 + left.m12 * right.m20 + left.m13 * right.m30;
