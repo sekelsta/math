@@ -48,18 +48,18 @@ public class Matrix3f {
         return this;
     }
 
-	public Matrix3f storeColumnMajor(FloatBuffer buf) {
-		buf.put(m00);
-		buf.put(m10);
-		buf.put(m20);
-		buf.put(m01);
-		buf.put(m11);
-		buf.put(m21);
-		buf.put(m02);
-		buf.put(m12);
-		buf.put(m22);
-		return this;
-	}
+    public Matrix3f storeColumnMajor(FloatBuffer buf) {
+        buf.put(m00);
+        buf.put(m10);
+        buf.put(m20);
+        buf.put(m01);
+        buf.put(m11);
+        buf.put(m21);
+        buf.put(m02);
+        buf.put(m12);
+        buf.put(m22);
+        return this;
+    }
 
     public Matrix3f transpose() {
         float f01 = m01;
@@ -238,15 +238,15 @@ public class Matrix3f {
         float m12 = left.m10 * right.m02 + left.m11 * right.m12 + left.m12 * right.m22;
         float m22 = left.m20 * right.m02 + left.m21 * right.m12 + left.m22 * right.m22;
 
-		out.m00 = m00;
-		out.m01 = m01;
-		out.m02 = m02;
-		out.m10 = m10;
-		out.m11 = m11;
-		out.m12 = m12;
-		out.m20 = m20;
-		out.m21 = m21;
-		out.m22 = m22;
+        out.m00 = m00;
+        out.m01 = m01;
+        out.m02 = m02;
+        out.m10 = m10;
+        out.m11 = m11;
+        out.m12 = m12;
+        out.m20 = m20;
+        out.m21 = m21;
+        out.m22 = m22;
 
         return out;
     }

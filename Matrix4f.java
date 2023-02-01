@@ -144,25 +144,25 @@ public class Matrix4f {
         return this;
     }
 
-	public Matrix4f storeColumnMajor(FloatBuffer buf) {
-		buf.put(m00);
-		buf.put(m10);
-		buf.put(m20);
-		buf.put(m30);
-		buf.put(m01);
-		buf.put(m11);
-		buf.put(m21);
-		buf.put(m31);
-		buf.put(m02);
-		buf.put(m12);
-		buf.put(m22);
-		buf.put(m32);
-		buf.put(m03);
-		buf.put(m13);
-		buf.put(m23);
-		buf.put(m33);
-		return this;
-	}
+    public Matrix4f storeColumnMajor(FloatBuffer buf) {
+        buf.put(m00);
+        buf.put(m10);
+        buf.put(m20);
+        buf.put(m30);
+        buf.put(m01);
+        buf.put(m11);
+        buf.put(m21);
+        buf.put(m31);
+        buf.put(m02);
+        buf.put(m12);
+        buf.put(m22);
+        buf.put(m32);
+        buf.put(m03);
+        buf.put(m13);
+        buf.put(m23);
+        buf.put(m33);
+        return this;
+    }
 
     public Matrix4f translate(float x, float y, float z) {
         m03 += m00 * x + m01 * y + m02 * z;
@@ -324,22 +324,22 @@ public class Matrix4f {
         float m23 = left.m20 * right.m03 + left.m21 * right.m13 + left.m22 * right.m23 + left.m23 * right.m33;
         float m33 = left.m30 * right.m03 + left.m31 * right.m13 + left.m32 * right.m23 + left.m33 * right.m33;
 
-		out.m00 = m00;
-		out.m01 = m01;
-		out.m02 = m02;
-		out.m03 = m03;
-		out.m10 = m10;
-		out.m11 = m11;
-		out.m12 = m12;
-		out.m13 = m13;
-		out.m20 = m20;
-		out.m21 = m21;
-		out.m22 = m22;
-		out.m23 = m23;
-		out.m30 = m30;
-		out.m31 = m31;
-		out.m32 = m32;
-		out.m33 = m33;
+        out.m00 = m00;
+        out.m01 = m01;
+        out.m02 = m02;
+        out.m03 = m03;
+        out.m10 = m10;
+        out.m11 = m11;
+        out.m12 = m12;
+        out.m13 = m13;
+        out.m20 = m20;
+        out.m21 = m21;
+        out.m22 = m22;
+        out.m23 = m23;
+        out.m30 = m30;
+        out.m31 = m31;
+        out.m32 = m32;
+        out.m33 = m33;
 
         return out;
     }
