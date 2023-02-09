@@ -54,6 +54,13 @@ public class Vector3f {
         return this;
     }
 
+    public Vector3f scale(float sx, float sy, float sz) {
+        this.x *= sx;
+        this.y *= sy;
+        this.z *= sz;
+        return this;
+    }
+
     public Vector3f negate() {
         return this.scale(-1);
     }
@@ -151,6 +158,10 @@ public class Vector3f {
 
     public Vector3f rotate(float yaw, float pitch, float roll) {
         return rotate(yaw, pitch, roll, this, this);
+    }
+
+    public static Vector3f randomNonzero(Random random) {
+        return randomNonzero(new Vector3f(), random);
     }
 
     // Return a random vector within the unit sphere, excluding {0, 0, 0}
