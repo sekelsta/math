@@ -350,16 +350,7 @@ public class Matrix4f {
     }
 
     public static Vector4f transform(Matrix4f left, Vector4f right, Vector4f out) {
-        float tx = left.m00 * right.x + left.m01 * right.y + left.m02 * right.z + left.m03 * right.w;
-        float ty = left.m10 * right.x + left.m11 * right.y + left.m12 * right.z + left.m13 * right.w;
-        float tz = left.m20 * right.x + left.m21 * right.y + left.m22 * right.z + left.m23 * right.w;
-        float tw = left.m30 * right.x + left.m31 * right.y + left.m32 * right.z + left.m33 * right.w;
-        out.x = tx;
-        out.y = ty;
-        out.z = tz;
-        out.w = tw;
-
-        return out;
+        return Vector4f.mul(left, right, out);
     }
 
     public Vector4f transform(Vector4f vector) {
