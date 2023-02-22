@@ -33,6 +33,13 @@ public class Vector3f {
         return this;
     }
 
+    public Vector3f subtract(Vector3f other) {
+        this.x -= other.x;
+        this.y -= other.y;
+        this.z -= other.z;
+        return this;
+    }
+
     public Vector3f translate(float x, float y, float z) {
         this.x += x;
         this.y += y;
