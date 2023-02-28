@@ -26,6 +26,10 @@ public class Vector3f {
         this.z = z;
     }
 
+    public Vector3f(Vector3f other) {
+        this(other.x, other.y, other.z);
+    }
+
     public Vector3f add(Vector3f other) {
         this.x += other.x;
         this.y += other.y;
