@@ -112,6 +112,17 @@ public class Vector3f {
         return add(left, negate(right, out), out);
     }
 
+    public float distanceSquared(Vector3f other) {
+        float dx = this.x - other.x;
+        float dy = this.y - other.y;
+        float dz = this.z - other.z;
+        return dx * dx + dy * dy + dz * dz;
+    }
+
+    public float distance(Vector3f other) {
+        return (float)Math.sqrt(distanceSquared(other));
+    }
+
     public static Vector3f cross(Vector3f left, Vector3f right, Vector3f out) {
         float cx = left.y * right.z - left.z * right.y;
         float cy = left.z * right.x - left.x * right.z;
