@@ -20,6 +20,12 @@ public class Vector2f {
         this.y = y;
     }
 
+    public Vector2f scale(float s) {
+        this.x *= s;
+        this.y *= s;
+        return this;
+    }
+
     @Override
     public String toString() {
         return x + " " + y;
