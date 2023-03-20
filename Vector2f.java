@@ -26,6 +26,12 @@ public class Vector2f {
         return this;
     }
 
+    public float distanceSquared(Vector2f other) {
+        float dx = this.x - other.x;
+        float dy = this.y - other.y;
+        return dx * dx + dy * dy;
+    }
+
     @Override
     public String toString() {
         return x + " " + y;
