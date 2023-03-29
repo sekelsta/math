@@ -189,6 +189,35 @@ public class Vector3f {
         return rotate(yaw, pitch, roll, this, this);
     }
 
+    public static Vector3f rotate(float angle, float axis_x, float axis_y, float axis_z, Vector3f in, Vector3f out) {
+        float c = (float) Math.cos(angle);
+        float s = (float) Math.sin(angle);
+
+        // 3x3 rotation matrix
+        float r00 = axis_x * axis_x * (1f - c) + c;
+        float r10 = axis_y * axis_x * (1f - c) + axis_z * s;
+        float r20 = axis_z * axis_x * (1f - c) - axis_y * s;
+        float r01 = axis_x * axis_y * (1f - c) - axis_z * s;
+        float r11 = axis_y * axis_y * (1f - c) + c;
+        float r21 = axis_z * axis_y * (1f - c) + axis_x * s;
+        float r02 = axis_x * axis_z * (1f - c) + axis_y * s;
+        float r12 = axis_y * axis_z * (1f - c) - axis_x * s;
+        float r22 = axis_z * axis_z * (1f - c) + c;
+
+        float x = in.x * r00 + in.y * r01 + in.z * r02;
+        float y = in.x * r10 + in.y * r11 + in.z * r12;
+        float z = in.x * r20 + in.y * r21 + in.z * r22;
+
+        out.x = x;
+        out.y = y;
+        out.z = z;
+        return out;
+    }
+
+    public Vector3f rotate(float angle, float axis_x, float axis_y, float axis_z) {
+        return rotate(angle, axis_x, axis_y, axis_z, this, this);
+    }
+
     public static Vector3f randomNonzero(Random random) {
         return randomNonzero(new Vector3f(), random);
     }
