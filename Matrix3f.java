@@ -256,6 +256,14 @@ public class Matrix3f {
         return mul(this, right, this);
     }
 
+    public static Vector3f transform(Matrix3f left, Vector3f right, Vector3f out) {
+        return Vector3f.mul(left, right, out);
+    }
+
+    public Vector3f transform(Vector3f vector) {
+        return transform(this, vector, vector);
+    }
+
     public float getYaw() {
         return (float) Math.atan2(-1 * m01, m11);
     }
